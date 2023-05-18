@@ -1,0 +1,18 @@
+package labgaus;
+
+import java.io.FileNotFoundException;
+
+// Класс для выполнения вычислений и вывода результатов
+public class Main {
+    public static void main(String[] args) {
+        try {
+            LinearEquationSystem system = new LinearEquationSystem("ФАЙЛ");
+            system.printSystem(); // выводим исходную систему уравнений
+            system.toTriangleForm(); // приводим систему уравнений к треугольному виду
+            system.printTriangleForm(); // выводим систему уравнений, приведенную к треугольному виду
+            system.solve(); // решаем полученную треугольную систему уравнений
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
+        }
+    }
+}
